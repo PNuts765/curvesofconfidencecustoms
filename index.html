@@ -1,346 +1,334 @@
+# FULL UPDATED INDEX.HTML CODE
+
+Copy EVERYTHING below into your `index.html` file and save.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Curves Of Confidence Customs</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
-body{
-background:#0d0d0d;
-color:#f5f5f5;
-font-family:'Montserrat',sans-serif;
-overflow-x:hidden;
-}
-
 html{
 scroll-behavior:smooth;
 }
 
-img{
-width:100%;
-display:block;
+body{
+font-family:'Poppins',sans-serif;
+background:#000;
+color:white;
+overflow-x:hidden;
+line-height:1.7;
 }
 
-a{
-text-decoration:none;
-}
-
-/* NAVBAR */
-
-nav{
+body::before{
+content:"";
 position:fixed;
 top:0;
+left:0;
 width:100%;
-z-index:999;
-background:rgba(0,0,0,0.78);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(255,255,255,0.08);
+height:100%;
+background:url('ChatGPT Image May 19, 2026, 11_33_43 AM.png') center top/cover no-repeat;
+opacity:.22;
+z-index:-2;
 }
 
-.nav-container{
-max-width:1400px;
-margin:auto;
-padding:18px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-family:'Cormorant Garamond',serif;
-font-size:2.2rem;
-font-weight:700;
-color:#fff;
-letter-spacing:1px;
-}
-
-.nav-links{
-display:flex;
-gap:28px;
-}
-
-.nav-links a{
-color:#f5f5f5;
-font-size:.95rem;
-transition:.3s;
-}
-
-.nav-links a:hover{
-color:#d4b27f;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-padding:40px;
-overflow:hidden;
-}
-
-.hero::before{
+body::after{
 content:"";
-position:absolute;
-inset:0;
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-url('7.png') center/cover no-repeat;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.82);
 z-index:-1;
 }
 
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:80px 20px;
+position:relative;
+}
+
 .hero-content{
-max-width:950px;
+max-width:1000px;
+backdrop-filter:blur(2px);
 }
 
 .hero h1{
-font-family:'Cormorant Garamond',serif;
-font-size:6rem;
-line-height:0.95;
-margin-bottom:25px;
-color:white;
+font-size:clamp(3rem,8vw,7rem);
+font-weight:800;
+line-height:1.05;
+margin-bottom:30px;
+color:#d9a85f;
+letter-spacing:-2px;
+text-shadow:0 0 30px rgba(0,0,0,.8);
 }
 
 .hero p{
-font-size:1.2rem;
+font-size:1.35rem;
+max-width:900px;
+margin:auto;
+color:#ececec;
 line-height:1.9;
-color:#dddddd;
-margin-bottom:35px;
+font-weight:300;
 }
 
-.btn{
+.hero-btn{
 display:inline-block;
-padding:18px 40px;
-background:#d4b27f;
-color:#111;
-border-radius:60px;
-font-weight:600;
+margin-top:50px;
+padding:20px 55px;
+background:#d9a85f;
+color:#000;
+text-decoration:none;
+font-weight:700;
+font-size:1.1rem;
+border-radius:999px;
 transition:.3s;
+box-shadow:0 10px 40px rgba(217,168,95,.3);
 }
 
-.btn:hover{
-background:#edd3aa;
-transform:translateY(-4px);
+.hero-btn:hover{
+transform:translateY(-4px) scale(1.03);
 }
-
-/* GENERAL */
 
 section{
-padding:110px 7%;
+padding:120px 8%;
+position:relative;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:70px;
+font-size:3rem;
+margin-bottom:25px;
+font-weight:700;
+color:#d9a85f;
 }
 
-.section-title h2{
-font-family:'Cormorant Garamond',serif;
-font-size:4rem;
-margin-bottom:15px;
+.section-sub{
+text-align:center;
+max-width:900px;
+margin:0 auto 70px;
+font-size:1.15rem;
+color:#d7d7d7;
+line-height:2;
 }
 
-.section-title p{
-max-width:850px;
+.glass{
+background:rgba(10,10,10,.78);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+border-radius:35px;
+box-shadow:0 10px 50px rgba(0,0,0,.45);
+}
+
+.showcase-main{
+max-width:1200px;
 margin:auto;
-line-height:1.9;
-color:#d0d0d0;
+overflow:hidden;
 }
 
-/* GALLERY */
+.showcase-main img{
+width:100%;
+display:block;
+border-radius:35px;
+object-fit:cover;
+max-height:950px;
+}
+
+.cover-label{
+padding:30px;
+text-align:center;
+font-size:1.1rem;
+letter-spacing:1px;
+color:#d9a85f;
+}
 
 .gallery-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+gap:35px;
+margin-top:60px;
 }
 
 .gallery-item{
 overflow:hidden;
-border-radius:24px;
-background:#171717;
-border:1px solid rgba(255,255,255,.07);
 transition:.4s;
 }
 
 .gallery-item:hover{
-transform:translateY(-10px);
+transform:translateY(-8px);
 }
 
 .gallery-item img{
+width:100%;
+display:block;
 height:100%;
 object-fit:cover;
 }
 
-/* EXPERIENCE */
+.feature-large{
+grid-column:span 2;
+}
 
-.luxury-grid{
+.steps{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-max-width:1300px;
-margin:auto;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+margin-top:70px;
 }
 
-.luxury-text h3{
-font-family:'Cormorant Garamond',serif;
-font-size:3.2rem;
-margin-bottom:25px;
+.step-card{
+padding:45px;
 }
 
-.luxury-text p{
-line-height:1.9;
-margin-bottom:20px;
-color:#d4d4d4;
-}
-
-.luxury-list{
-display:grid;
-gap:15px;
-margin-top:35px;
-}
-
-.luxury-list div{
-background:#171717;
-padding:16px 18px;
-border-left:3px solid #d4b27f;
-border-radius:12px;
-}
-
-/* PACKAGE */
-
-.signature-wrapper{
-max-width:900px;
-margin:auto;
-}
-
-.signature-card{
-background:#171717;
-padding:55px;
-border-radius:28px;
-border:1px solid rgba(255,255,255,.08);
-box-shadow:0 15px 50px rgba(0,0,0,.35);
-}
-
-.signature-card h3{
-font-family:'Cormorant Garamond',serif;
-font-size:3rem;
-margin-bottom:15px;
-text-align:center;
-}
-
-.signature-price{
+.step-number{
 font-size:4rem;
-font-weight:700;
+font-weight:800;
+color:#d9a85f;
+margin-bottom:20px;
+}
+
+.step-card h3{
+font-size:1.6rem;
+margin-bottom:20px;
+}
+
+.step-card p{
+font-size:1.05rem;
+color:#d7d7d7;
+line-height:2;
+}
+
+.luxury-box{
+max-width:1200px;
+margin:80px auto 0;
+padding:70px;
 text-align:center;
-color:#d4b27f;
-margin-bottom:35px;
 }
 
-.signature-card ul{
-list-style:none;
-display:grid;
-gap:16px;
-line-height:1.8;
-color:#e2e2e2;
-font-size:1.02rem;
-}
-
-/* PROCESS */
-
-.process-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-.process-box{
-background:#171717;
-padding:35px;
-border-radius:24px;
-border:1px solid rgba(255,255,255,.06);
-}
-
-.process-box span{
+.luxury-box h2{
 font-size:3rem;
-font-weight:700;
-color:#d4b27f;
+margin-bottom:35px;
+color:#d9a85f;
 }
 
-.process-box h4{
-margin:20px 0 15px;
-font-size:1.3rem;
+.luxury-box p{
+font-size:1.2rem;
+line-height:2.1;
+color:#e3e3e3;
+max-width:950px;
+margin:auto;
 }
 
-.process-box p{
-line-height:1.9;
-color:#d5d5d5;
+.price-box{
+max-width:900px;
+margin:90px auto 0;
+padding:70px;
+text-align:center;
 }
 
-/* CONTACT */
+.price-box h2{
+font-size:3rem;
+margin-bottom:20px;
+color:#d9a85f;
+}
+
+.price{
+font-size:5rem;
+font-weight:800;
+margin:20px 0 40px;
+}
+
+.price-list{
+list-style:none;
+max-width:700px;
+margin:auto;
+}
+
+.price-list li{
+font-size:1.15rem;
+padding:16px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+color:#ededed;
+}
+
+.contact-section{
+text-align:center;
+}
 
 .contact-box{
 max-width:1100px;
 margin:auto;
-background:#171717;
-padding:60px;
-border-radius:30px;
-border:1px solid rgba(255,255,255,.08);
+padding:90px 70px;
+background:linear-gradient(180deg,rgba(20,20,20,.92),rgba(0,0,0,.92));
+border:2px solid rgba(217,168,95,.35);
+border-radius:40px;
+box-shadow:0 20px 80px rgba(0,0,0,.6);
 }
 
 .contact-box h2{
-font-family:'Cormorant Garamond',serif;
-font-size:3.5rem;
-margin-bottom:25px;
-text-align:center;
+font-size:4rem;
+margin-bottom:30px;
+color:#d9a85f;
+line-height:1.1;
 }
 
 .contact-box p{
-line-height:1.9;
-margin-bottom:20px;
-color:#d6d6d6;
-}
-
-.email-box{
-background:#0f0f0f;
-padding:25px;
-border-radius:18px;
-text-align:center;
-margin:35px 0;
 font-size:1.2rem;
-border:1px solid rgba(255,255,255,.07);
+line-height:2;
+color:#e5e5e5;
+max-width:900px;
+margin:0 auto 35px;
 }
 
-.email-box a{
-color:#d4b27f;
+.email-big{
+display:inline-block;
+margin:30px 0 45px;
+padding:22px 45px;
+font-size:1.4rem;
 font-weight:700;
+color:#000;
+background:#d9a85f;
+border-radius:999px;
+text-decoration:none;
+box-shadow:0 10px 40px rgba(217,168,95,.3);
 }
 
-/* FOOTER */
+.requirements{
+text-align:left;
+max-width:850px;
+margin:50px auto 0;
+}
 
-footer{
-padding:45px 20px;
+.requirements li{
+margin:18px 0;
+font-size:1.08rem;
+color:#e3e3e3;
+line-height:1.9;
+}
+
+.footer{
+padding:60px 20px;
 text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
-background:#0a0a0a;
-color:#8d8d8d;
+font-size:1rem;
+color:#999;
 }
-
-/* MOBILE */
 
 @media(max-width:900px){
 
@@ -348,356 +336,188 @@ color:#8d8d8d;
 font-size:4rem;
 }
 
-.luxury-grid{
-grid-template-columns:1fr;
+.hero p{
+font-size:1.1rem;
 }
 
-.nav-links{
-display:none;
+.feature-large{
+grid-column:span 1;
 }
 
-section{
-padding:90px 6%;
+.contact-box{
+padding:60px 30px;
 }
 
-.signature-card{
-padding:35px;
+.contact-box h2{
+font-size:2.7rem;
+}
+
+.price{
+font-size:4rem;
 }
 
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-
-<nav>
-
-<div class="nav-container">
-
-<div class="logo">Curves Of Confidence</div>
-
-<div class="nav-links">
-<a href="#gallery">Gallery</a>
-<a href="#experience">Experience</a>
-<a href="#package">Package</a>
-<a href="#process">Process</a>
-<a href="#contact">Contact</a>
-</div>
-
-</div>
-
-</nav>
-
-<!-- HERO -->
-
 <section class="hero">
-
 <div class="hero-content">
-
-<h1>Luxury Custom Boudoir Coloring Books</h1>
+<h1>Curves Of Confidence Customs</h1>
 
 <p>
-Custom luxury coloring books designed from your photos, style, and vision.
-Every project is personalized with glamour-inspired sketch artwork created
-to celebrate confidence, femininity, beauty, curves, fashion, and self-expression.
+Luxury custom coloring books created from YOUR photos. Personalized artwork, custom outfits, stunning aesthetics, beautiful poses, premium layouts, and professionally designed covers made uniquely for you.
 </p>
 
-<a href="#contact" class="btn">Start Your Custom Book</a>
-
+<a href="mailto:curvesofconfidence@proton.me" class="hero-btn">Start Your Luxury Book</a>
 </div>
-
 </section>
 
-<!-- GALLERY -->
+<section>
+<h2 class="section-title">Luxury Custom Artwork</h2>
 
-<section id="gallery">
-
-<div class="section-title">
-
-<h2>Custom Artwork Gallery</h2>
-
-<p>
-Every image shown below was created exclusively for custom projects.
-No stock images. No premade templates. Every book is uniquely designed
-around the client’s aesthetic, poses, outfits, and overall vision.
+<p class="section-sub">
+This is more than a coloring book — it is a personalized luxury experience designed around your beauty, confidence, personality, and vision. Whether it is for birthdays, anniversaries, weddings, gifts, keepsakes, self-love, or simply because you're beautiful, every page is created uniquely for YOU.
 </p>
 
+<div class="showcase-main glass">
+<img src="9.png" alt="Luxury Showcase">
+<div class="cover-label">Featured Luxury Artwork Showcase</div>
 </div>
 
 <div class="gallery-grid">
 
-<div class="gallery-item">
-<img src="7.png" alt="">
+<div class="gallery-item glass feature-large">
+<img src="61.png" alt="Luxury Art">
 </div>
 
-<div class="gallery-item">
-<img src="9.png" alt="">
+<div class="gallery-item glass">
+<img src="7.png" alt="Luxury Art">
 </div>
 
-<div class="gallery-item">
-<img src="53.png" alt="">
+<div class="gallery-item glass">
+<img src="53.png" alt="Luxury Art">
 </div>
 
-<div class="gallery-item">
-<img src="61.png" alt="">
+<div class="gallery-item glass">
+<img src="ChatGPT Image May 19, 2026, 09_43_01 AM.png" alt="Book Cover Example">
 </div>
 
-<div class="gallery-item">
-<img src="ChatGPT Image May 19, 2026, 09_43_01 AM.png" alt="">
+<div class="gallery-item glass feature-large">
+<img src="ChatGPT Image May 19, 2026, 11_33_43 AM.png" alt="Luxury Art">
 </div>
 
-<div class="gallery-item">
-<img src="ChatGPT Image May 19, 2026, 11_33_43 AM.png" alt="">
+<div class="gallery-item glass">
+<img src="interior1.png" alt="Interior Page">
+</div>
+
+<div class="gallery-item glass">
+<img src="interior2.png" alt="Interior Page">
 </div>
 
 </div>
-
 </section>
 
-<!-- EXPERIENCE -->
+<section>
+<h2 class="section-title">The Luxury Experience</h2>
 
-<section id="experience">
-
-<div class="luxury-grid">
-
-<div class="luxury-text">
-
-<h3>More Than A Coloring Book</h3>
-
-<p>
-Curves Of Confidence creates personalized luxury boudoir coloring books
-in a detailed sketch-art style designed around your photos, confidence,
-personality, fashion, poses, and aesthetic.
+<p class="section-sub">
+Every custom book is professionally designed around your photos, your energy, your aesthetic, and your confidence. We guide the entire creative process to make sure your final book feels elegant, empowering, artistic, and unforgettable.
 </p>
 
+<div class="steps">
+
+<div class="step-card glass">
+<div class="step-number">01</div>
+<h3>Email Your Photos & Inspiration</h3>
 <p>
-These books are designed as unforgettable keepsakes, luxury gifts,
-girls-night experiences, self-love projects, collectible art,
-and personalized glamour storytelling.
+Send multiple clear photos of yourself including different face angles, side profiles, full body photos, hairstyle references, desired poses, outfit inspiration, themes, aesthetics, mood boards, or any ideas you want included.
 </p>
+</div>
 
-<div class="luxury-list">
+<div class="step-card glass">
+<div class="step-number">02</div>
+<h3>We Design Your Luxury Concept</h3>
+<p>
+If you already have outfit ideas, aesthetics, or scenes in mind, we will bring them to life beautifully. If not — we got you. We will creatively design luxury outfits, elegant poses, premium scenes, and aesthetics specifically for you.
+</p>
+</div>
 
-<div>Perfect anniversary or partner gift</div>
-
-<div>Luxury surprise for wives or girlfriends</div>
-
-<div>Girls nights & wine nights</div>
-
-<div>Bachelorette & bridal shower gifts</div>
-
-<div>Confidence and self-love keepsakes</div>
-
-<div>Luxury personalized birthday gifts</div>
-
-<div>Custom coffee table art books</div>
-
-<div>Content creator & influencer merchandise</div>
-
-<div>Unique collectible personalized artwork</div>
-
+<div class="step-card glass">
+<div class="step-number">03</div>
+<h3>Your Custom Book Is Created</h3>
+<p>
+Once all required images and information are received and verified, you will be contacted back via email with PayPal payment information. Your luxury custom book will then be professionally designed and created uniquely around YOU.
+</p>
 </div>
 
 </div>
 
-<div class="gallery-item">
-<img src="9.png" alt="">
-</div>
+<div class="luxury-box glass">
+<h2>Designed To Feel Timeless</h2>
 
+<p>
+Every book is created to feel like a luxury keepsake — elegant enough to display, personal enough to treasure forever, and artistic enough to feel truly special. From glamorous aesthetics to soft feminine energy and premium editorial styling, your beauty becomes art.
+</p>
 </div>
-
 </section>
 
-<!-- SIGNATURE PACKAGE -->
-
-<section id="package">
-
-<div class="section-title">
-
+<section>
+<div class="price-box glass">
 <h2>Signature Luxury Collection</h2>
 
-<p>
-A fully custom luxury boudoir coloring book experience
-designed around your personal style, confidence,
-aesthetic, and vision.
-</p>
+<div class="price">$249</div>
 
-</div>
-
-<div class="signature-wrapper">
-
-<div class="signature-card">
-
-<h3>Signature Luxury Collection</h3>
-
-<div class="signature-price">$249</div>
-
-<ul>
-
-<li>40 fully custom pages</li>
-
-<li>Personalized artwork from client photos</li>
-
-<li>Custom outfits, poses, aesthetics & scenes</li>
-
-<li>Luxury sketch-style illustrations</li>
-
-<li>Personalized cover design</li>
-
-<li>High-resolution printable PDF</li>
-
-<li>Print-ready formatting for Amazon KDP</li>
-
-<li>Designed for coloring, collecting, gifting & keepsakes</li>
-
-<li>Luxury personalized visual storytelling</li>
-
-<li>Built completely around your vision & aesthetic</li>
-
+<ul class="price-list">
+<li>40 Fully Custom Pages</li>
+<li>Personalized Artwork From Your Photos</li>
+<li>Custom Outfits, Poses, Aesthetics & Scenes</li>
+<li>Luxury Sketch-Style Illustrations</li>
+<li>Premium Personalized Cover Design</li>
+<li>Designed For Coloring, Collecting, Gifting & Keepsakes</li>
+<li>Luxury Feminine Editorial Styling</li>
+<li>Professionally Designed Layouts</li>
 </ul>
-
 </div>
-
-</div>
-
 </section>
 
-<!-- PROCESS -->
-
-<section id="process">
-
-<div class="section-title">
-
-<h2>How To Order</h2>
-
-<p>
-Follow the steps below to begin your custom luxury coloring book project.
-</p>
-
-</div>
-
-<div class="process-grid">
-
-<div class="process-box">
-
-<span>01</span>
-
-<h4>Email Your Photos</h4>
-
-<p>
-Send clear reference photos, inspiration images,
-desired themes, outfits, poses, hairstyles,
-and any ideas you want included.
-</p>
-
-</div>
-
-<div class="process-box">
-
-<span>02</span>
-
-<h4>Describe Your Vision</h4>
-
-<p>
-Include page ideas, aesthetics, glamour themes,
-fashion styles, moods, scenery,
-and your overall desired vibe.
-</p>
-
-</div>
-
-<div class="process-box">
-
-<span>03</span>
-
-<h4>Project Review</h4>
-
-<p>
-Once all required images and project information
-are received and verified, your request
-will officially be approved for production.
-</p>
-
-</div>
-
-<div class="process-box">
-
-<span>04</span>
-
-<h4>Payment & Production</h4>
-
-<p>
-After approval, you will receive PayPal payment
-information through email along with pricing confirmation
-and estimated turnaround time.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
+<section class="contact-section">
 <div class="contact-box">
 
-<h2>Start Your Custom Project</h2>
+<h2>Start Your Custom Luxury Book</h2>
 
 <p>
-To begin your custom luxury coloring book,
-email your photos, inspiration images,
-theme ideas, page requests, outfits,
-poses, and any special customization details.
+Please send your photos, inspiration images, desired aesthetics, outfit ideas, hairstyles, poses, themes, and any creative requests directly to our email below.
 </p>
 
-<p>
-The more detail you provide,
-the more personalized your project becomes.
-Reference aesthetics, scenery, hairstyles,
-fashion styles, confidence themes,
-and luxury vibes are all welcome.
-</p>
-
-<div class="email-box">
-
-Send all project requests to:<br><br>
-
-<a href="mailto:curvesofconfidence@proton.me">
+<a class="email-big" href="mailto:curvesofconfidence@proton.me">
 curvesofconfidence@proton.me
 </a>
 
-</div>
-
 <p>
-After all required images and information are obtained
-and verified, you will be contacted back through email
-with your pricing confirmation, PayPal payment information,
-and estimated turnaround time.
+To achieve the best possible results, we strongly recommend sending multiple high-quality photos including different face angles, full body images, clear lighting, and any references that help capture your desired vision.
 </p>
 
-<p>
-Serious inquiries only. Every Curves Of Confidence project
-is individually crafted and customized specifically
-for each client.
-</p>
+<ul class="requirements">
+<li>✔ Multiple face angles and clear selfies</li>
+<li>✔ Full body photos</li>
+<li>✔ Outfit inspiration or clothing references</li>
+<li>✔ Desired poses and aesthetics</li>
+<li>✔ Hairstyle references</li>
+<li>✔ Mood boards or theme inspiration if available</li>
+<li>✔ Any personal ideas you want incorporated</li>
+<li>✔ If you do not know what outfits or aesthetics you want, we will creatively design everything for you</li>
+<li>✔ Once all required images and information are verified, you will receive PayPal payment information via email</li>
+</ul>
 
 </div>
-
 </section>
 
-<!-- FOOTER -->
-
-<footer>
-
-Curves Of Confidence Customs © 2026 • Luxury Personalized Boudoir Coloring Books
-
-</footer>
+<div class="footer">
+Curves Of Confidence Customs © 2026 — Luxury Personalized Art Books
+</div>
 
 </body>
 </html>
+```
