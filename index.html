@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Curves Of Confidence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+font-family:'Cormorant Garamond',serif;
+color:white;
+overflow-x:hidden;
+background-image:
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.82)),
+url('9.png');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+section{
+padding:90px 7%;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-size:82px;
+color:#ffb6d9;
+margin-bottom:25px;
+text-shadow:0 0 25px rgba(255,105,180,.4);
+}
+
+.hero p{
+font-size:24px;
+line-height:1.8;
+color:#f7d9e8;
+max-width:900px;
+margin:auto;
+}
+
+.hero-btn{
+display:inline-block;
+margin-top:40px;
+padding:18px 50px;
+border-radius:999px;
+background:linear-gradient(90deg,#ff4fa3,#ff86c2);
+color:white;
+text-decoration:none;
+font-size:22px;
+font-weight:700;
+transition:.4s;
+box-shadow:0 0 30px rgba(255,105,180,.4);
+}
+
+.hero-btn:hover{
+transform:scale(1.05);
+}
+
+.cover-section{
+text-align:center;
+}
+
+.cover-section h2{
+font-size:60px;
+color:#ffbfdc;
+margin-bottom:20px;
+}
+
+.cover-text{
+max-width:1000px;
+margin:auto;
+font-size:22px;
+line-height:1.8;
+color:#f8dbe8;
+margin-bottom:50px;
+}
+
+.cover-image{
+width:100%;
+max-width:1200px;
+border-radius:25px;
+display:block;
+margin:auto;
+box-shadow:0 0 45px rgba(255,182,217,.3);
+border:2px solid rgba(255,182,217,.2);
+}
+
+.process{
+max-width:1300px;
+margin:auto;
+}
+
+.process h2{
+text-align:center;
+font-size:58px;
+margin-bottom:70px;
+color:#ffbfdc;
+}
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+}
+
+.process-card{
+background:rgba(10,10,10,.82);
+padding:40px;
+border-radius:28px;
+border:1px solid rgba(255,182,217,.12);
+backdrop-filter:blur(8px);
+}
+
+.process-card h3{
+font-size:34px;
+margin-bottom:18px;
+color:#ffb6d9;
+}
+
+.process-card p{
+font-size:20px;
+line-height:1.8;
+color:#f3dce6;
+}
+
+.pricing{
+text-align:center;
+}
+
+.pricing h2{
+font-size:60px;
+color:#ffbfdc;
+margin-bottom:60px;
+}
+
+.price-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+max-width:1200px;
+margin:auto;
+}
+
+.price-card{
+background:rgba(0,0,0,.8);
+border-radius:35px;
+padding:50px;
+border:1px solid rgba(255,182,217,.15);
+backdrop-filter:blur(10px);
+}
+
+.price-card h3{
+font-size:42px;
+margin-bottom:20px;
+color:#ffb6d9;
+}
+
+.price{
+font-size:82px;
+font-weight:700;
+margin-bottom:25px;
+color:#ff4fa3;
+}
+
+.price-card p{
+font-size:22px;
+line-height:1.8;
+color:#f3dce6;
+}
+
+.gallery-section{
+text-align:center;
+}
+
+.gallery-section h2{
+font-size:60px;
+color:#ffbfdc;
+margin-bottom:20px;
+}
+
+.gallery-text{
+max-width:1000px;
+margin:auto;
+font-size:22px;
+line-height:1.8;
+color:#f8dbe8;
+margin-bottom:60px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:28px;
+max-width:1500px;
+margin:auto;
+}
+
+.gallery img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:26px;
+cursor:pointer;
+border:2px solid rgba(255,255,255,.12);
+transition:.35s;
+background:#000;
+filter:contrast(1.08) brightness(.98);
+}
+
+.gallery img:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 0 35px rgba(255,105,180,.32);
+}
+
+.email-box{
+margin-top:80px;
+text-align:center;
+padding:50px;
+background:rgba(0,0,0,.75);
+border-top:1px solid rgba(255,182,217,.15);
+border-bottom:1px solid rgba(255,182,217,.15);
+}
+
+.email-box h2{
+font-size:52px;
+margin-bottom:25px;
+color:#ffbfdc;
+}
+
+.email-box p{
+font-size:22px;
+line-height:1.8;
+margin-bottom:30px;
+color:#f3dce6;
+}
+
+.email{
+font-size:34px;
+color:#ff69b4;
+font-weight:700;
+word-break:break-word;
+}
+
+.lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.96);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.lightbox.active{
+display:flex;
+}
+
+.lightbox img{
+max-width:88%;
+max-height:88%;
+border-radius:20px;
+box-shadow:0 0 50px rgba(255,255,255,.15);
+}
+
+.close{
+position:absolute;
+top:25px;
+right:35px;
+font-size:55px;
+cursor:pointer;
+color:white;
+}
+
+.prev,
+.next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:70px;
+color:white;
+cursor:pointer;
+padding:20px;
+user-select:none;
+}
+
+.prev{
+left:30px;
+}
+
+.next{
+right:30px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:52px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.cover-section h2,
+.process h2,
+.pricing h2,
+.gallery-section h2{
+font-size:42px;
+}
+
+.email{
+font-size:22px;
+}
+
+.gallery img{
+height:340px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Curves Of Confidence</h1>
+
+<p>
+A bold, intimate luxury custom art experience celebrating confidence,
+femininity, softness, beauty, seduction, and self-expression.
+Designed for women who want something unforgettable.
+</p>
+
+<a href="#contact" class="hero-btn">
+Reserve Your Luxury Book
+</a>
+
+</div>
+</section>
+
+<section class="cover-section">
+
+<h2>Cover Example</h2>
+
+<p class="cover-text">
+Your custom luxury book includes a fully personalized premium cover design,
+30 or 50 beautifully curated pages, custom artistic direction,
+luxury feminine aesthetics, and a one-of-a-kind collectible experience.
+If you already have a vision for your cover, you can send inspiration images —
+otherwise the full creative direction will be handled for you.
+</p>
+
+<img src="COVERS.png" class="cover-image">
+
+</section>
+
+<section class="process">
+
+<h2>How The Experience Works</h2>
+
+<div class="process-grid">
+
+<div class="process-card">
+<h3>1. Send Your Photos</h3>
+<p>
+Send clear high quality photos with different angles of your face and body.
+Blurry, dark, cropped, or low quality images may not be approved.
+You can also send already glamorous photos if you already feel
+ready to be published because you're hot ♡
+</p>
+</div>
+
+<div class="process-card">
+<h3>2. Outfit & Pose Direction</h3>
+<p>
+You may send outfit inspiration, pose ideas, themes,
+aesthetic moods, hairstyles, luxury concepts,
+or specific visions you want included.
+If you don’t know what poses or outfits to choose,
+creative direction can be built for you.
+</p>
+</div>
+
+<div class="process-card">
+<h3>3. Approval Process</h3>
+<p>
+After your materials are reviewed and approved,
+you’ll receive the official PayPal payment link directly by email.
+Payment is only accepted AFTER proper materials are approved.
+</p>
+</div>
+
+<div class="process-card">
+<h3>4. Luxury Creation</h3>
+<p>
+Your custom experience is then fully designed into a cohesive luxury book
+with elegant artistic styling, femininity, confidence,
+beautiful compositions, and collectible presentation.
+</p>
+</div>
+
+<div class="process-card">
+<h3>5. Time Frame</h3>
+<p>
+Luxury custom work takes time.
+Estimated completion time is approximately 3–4 weeks depending on detail,
+communication, revisions, and project complexity.
+</p>
+</div>
+
+<div class="process-card">
+<h3>6. Perfect For</h3>
+<p>
+Perfect as a self-love experience,
+birthday gift, wedding gift, anniversary surprise,
+girls night inspiration, confidence celebration,
+partner surprise, or simply because you deserve to feel beautiful.
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="pricing">
+
+<h2>Luxury Experiences</h2>
+
+<div class="price-grid">
+
+<div class="price-card">
+
+<h3>30 Page Custom Luxury Book</h3>
+
+<div class="price">$300</div>
+
+<p>
+Includes:
+<br><br>
+• Fully personalized custom luxury book
+<br>
+• Personalized cover design
+<br>
+• 30 custom pages
+<br>
+• Luxury feminine aesthetic direction
+<br>
+• Pose & styling assistance
+<br>
+• Digital final delivery
+</p>
+
+</div>
+
+<div class="price-card">
+
+<h3>50 Page Custom Luxury Book</h3>
+
+<div class="price">$400</div>
+
+<p>
+Includes:
+<br><br>
+• Expanded luxury experience
+<br>
+• Personalized custom cover
+<br>
+• 50 custom pages
+<br>
+• Additional scenes & concepts
+<br>
+• More aesthetic variation
+<br>
+• Premium collectible presentation
+</p>
+
+</div>
+
+</div>
+</section>
+
+<section class="gallery-section">
+
+<h2>Luxury Gallery</h2>
+
+<p class="gallery-text">
+Examples of luxury aesthetics, feminine energy,
+soft glamour, artistic moods, confidence,
+and custom visual inspiration.
+Every experience is personalized around YOU.
+</p>
+
+<div class="gallery">
+
+<img src="sdd.png" onclick="openLightbox(0)">
+<img src="7.png" onclick="openLightbox(1)">
+<img src="9.png" onclick="openLightbox(2)">
+<img src="53.png" onclick="openLightbox(3)">
+<img src="61.png" onclick="openLightbox(4)">
+<img src="gfdsfg.png" onclick="openLightbox(5)">
+<img src="hjkk.png" onclick="openLightbox(6)">
+<img src="asd.png" onclick="openLightbox(7)">
+<img src="lololo.png" onclick="openLightbox(8)">
+<img src="xxx.png" onclick="openLightbox(9)">
+
+</div>
+
+</section>
+
+<section class="email-box" id="contact">
+
+<h2>Let's Create Something Beautiful</h2>
+
+<p>
+Send your photos, inspiration, outfit ideas,
+poses, themes, aesthetics, hairstyles,
+or any creative direction you'd like included
+in your luxury custom book experience.
+</p>
+
+<div class="email">
+curvesofconfidence@proton.me
+</div>
+
+</section>
+
+<div class="lightbox" id="lightbox">
+
+<span class="close" onclick="closeLightbox()">&times;</span>
+
+<span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+
+<img id="lightbox-img">
+
+<span class="next" onclick="changeSlide(1)">&#10095;</span>
+
+</div>
+
+<script>
+
+const images = [
+"sdd.png",
+"7.png",
+"9.png",
+"53.png",
+"61.png",
+"gfdsfg.png",
+"hjkk.png",
+"asd.png",
+"lololo.png",
+"xxx.png"
+];
+
+let currentIndex = 0;
+
+function openLightbox(index){
+currentIndex = index;
+document.getElementById("lightbox").classList.add("active");
+document.getElementById("lightbox-img").src = images[index];
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").classList.remove("active");
+}
+
+function changeSlide(direction){
+
+currentIndex += direction;
+
+if(currentIndex < 0){
+currentIndex = images.length - 1;
+}
+
+if(currentIndex >= images.length){
+currentIndex = 0;
+}
+
+document.getElementById("lightbox-img").src = images[currentIndex];
+}
+
+document.addEventListener("keydown", function(e){
+
+if(e.key === "Escape"){
+closeLightbox();
+}
+
+if(e.key === "ArrowRight"){
+changeSlide(1);
+}
+
+if(e.key === "ArrowLeft"){
+changeSlide(-1);
+}
+
+});
+
+</script>
+
+</body>
+</html>
